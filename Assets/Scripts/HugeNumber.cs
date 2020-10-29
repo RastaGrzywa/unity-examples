@@ -235,6 +235,7 @@ public class HugeNumber
                 formattedNumberValue = numberValue;
                 break;
             case HugeNumberDisplayFormat.SPACED:
+                // return formatted number with spaces every 3 digits
                 int spaceIndicator = 3;
                 for (int i = numberValue.Length - 1; i >= 0; i--)
                 {
@@ -248,6 +249,7 @@ public class HugeNumber
                 }
                 break;
             case HugeNumberDisplayFormat.INDEXED:
+                // return formatted number with index: A,B,C ....
                 int indexIndicator = 4;
 
                 int indexNumber = Mathf.CeilToInt(numberValue.Length / indexIndicator);

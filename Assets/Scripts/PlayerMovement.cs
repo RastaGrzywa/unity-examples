@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _meshRigidBody.AddForce(Vector3.up * 10, ForceMode.Impulse);
         _meshRigidBody.AddTorque(transform.forward * 5);
-        Debug.Log("Jumped");
     }
 
     private void HandleMove(InputAction.CallbackContext obj)

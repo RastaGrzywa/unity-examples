@@ -10,6 +10,8 @@ public class ClickerGameManager : MonoBehaviour
     private ProgressBar mainProgressBar;
     [SerializeField]
     private Text lvlText;
+    [SerializeField]
+    private Text progressText;
 
     [SerializeField]
     private float userScore = 0;
@@ -47,6 +49,7 @@ public class ClickerGameManager : MonoBehaviour
     private void UpdateUI()
     {
         lvlText.text = "LVL: " + currentLvl;
+        progressText.text = userScore + " / " + maxLvlScore;
     }
 
     public void ShowNextUnlockable(UnlockableController unlockable)
@@ -64,6 +67,7 @@ public class ClickerGameManager : MonoBehaviour
     public void AddScore(float score)
     {
         userScore += score;
+        UpdateUI();
     }
 
     public int GetCurrentLevel()
